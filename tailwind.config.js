@@ -1,18 +1,33 @@
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  mode: "jit", //Just in time compiler
+  darkMode: false, // or 'media' or 'class'
+  content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        primary: "#202225",
+        secondary: "#5865f2",
+        gray: {
+          900: "#202225",
+          800: "#2f3136",
+          700: "#36393f",
+          600: "#4f545c",
+          400: "#d4d7dc",
+          300: "#e3e5e8",
+          200: "#ebedef",
+          100: "#f2f3f5",
+        },
+      },
+      spacing: {
+        88: "22rem",
       },
     },
   },
+  variants: {
+    extend: {},
+  },
   plugins: [],
-}
+};
